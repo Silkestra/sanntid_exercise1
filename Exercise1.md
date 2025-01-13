@@ -72,9 +72,7 @@ In your solution, make sure that the two threads intermingle, and don't just run
 
 ### Go
 
-Using shared variable synchronization is possible, but not the idiomatic approach in Go. You should instead create a "server" that is responsible for its own data, `select{}` (http://golang.org/ref/spec#Select_statements)s messages, and perform different actions on its data when it receives a corresponding message. 
 
-In this case, the data is the integer `i`, and the three actions it can perform are increment, decrement, and read (or "get"). Two other goroutines should send the increment and decrement requests to the number-server, and `main` should read out the final value after these two goroutines are done.
 
 Before attempting to do the exercise, it is recommended to have a look at the following chapters of the interactive go tutorial:
  - Goroutines (https://tour.golang.org/concurrency/1)
